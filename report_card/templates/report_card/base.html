@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        #customEddy {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+
+        }
+
+        #formEddy {
+            margin: 0 auto;
+            width:900px;
+            border-style: inset;
+            border-width: medium;
+        }
+        #h1Eddy {
+            text-align: center;
+            text-decoration: underline;
+        }
+        .jc-center {
+            justify-content: center;
+        }
+        .flex-parent {
+            display: flex;
+        }
+        button {
+          background-color: #555555;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        td {
+            text-align: center;
+        }
+
+    </style>
+    {% block title %}<title>Home - Student Report Card</title>{% endblock %}
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">NextGen
+                <img src="{% static 'report_card/images/logo.jpeg' %}" alt="" width="30" height="24">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href={% url 'index' %}>Home</a>
+                <a class="nav-link" href={% url 'input' %}>Input Student</a>
+                  <a class="nav-link" href={% url 'studentView' %}>Student List</a>
+
+
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {% block content %}
+
+        {% endblock %}
+
+</body>
+</html>

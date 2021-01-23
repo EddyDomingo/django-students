@@ -1,0 +1,52 @@
+{% extends "report_card/base.html" %}
+{%  load static %}
+
+
+{% block title %}<title>List - Student Report Card</title>{% endblock %}
+
+{% block content %}
+    <br>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card body">
+                <h2 id="h1Eddy">Student List</h2>
+            </div>
+
+            <div class="card card body">
+                <table class="table">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Math</th>
+                        <th>English</th>
+                        <th>Physics</th>
+                        <th>Chemistry</th>
+                        <th>Student Grade</th>
+                        <th>Modify</th>
+                        <th>Delete</th>
+
+                    </tr>
+
+                    {% for i in students %}
+                        <tr>
+                            <td>{{ i.Fname }}</td>
+                            <td>{{ i.Lname }}</td>
+                            <td>{{ i.Email }}</td>
+                            <td>{{ i.Math }}</td>
+                            <td>{{ i.English }}</td>
+                            <td>{{ i.Physics }}</td>
+                            <td>{{ i.Chemistry }}</td>
+                            <td>{{ i.year_in_school }}</td>
+                            <td><a class="btn btn-sm btn-warning" href="{% url 'modifyStudent' i.id %}">Update</a></td>
+                            <td><a class="btn btn-sm btn-dark" href="{% url 'deleteStudent' i.id %}">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

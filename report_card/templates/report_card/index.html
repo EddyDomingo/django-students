@@ -1,0 +1,32 @@
+{% extends "report_card/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md">
+            <div class="card card body">
+                <div class="jc-center ">
+                <h1>Student Report Card</h1>
+            <br>
+            <p >
+                Welcome to the Student Grade Management System.
+                NextGen offers an automated Report Card Management Software which allows schools
+                to automatically generate report cards and share with parents via email on web & mobile apps.
+                Capture student data enrolment status and attendance records to meet report card requirements.
+                Meet the report card standards and adhere to the grading scale system defined by institutions
+                with the ability to share it via website & mobile apps.
+                NextGen can build a bank of customizable and ready-to-use report templates for any type of institution or grade level.
+                There are of course various report card styles and formats to meet your diverse requirements.
+                Place objects, such as watermarks, graphics and signatures where you want.Empower professors with
+                data on report card, attendance, and discipline to improve instructions in the classroom.
+            </p>
+
+            <img src="{% static 'report_card/images/reportcard-1.jpeg' %}" class="shadow-lg p-3 mb-5 bg-white rounded" alt="report" width="600" height="300">
+        </div>
+    </div>
+    </div>
+    </div>
+
+ {% endblock %}
+
+

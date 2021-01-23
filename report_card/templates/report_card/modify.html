@@ -1,0 +1,40 @@
+{% extends "report_card/base.html" %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}<title>Modify - Student Report Card</title>{% endblock %}
+
+{% block content %}
+
+        <h1 id="h1Eddy">Modify Form for Students & Grades</h1>
+        <h2 id="h1Eddy"> Enter student email for search</h2>
+        <form action="" method="post" id="formEddy">
+
+            <div class="mb-3">
+                {% csrf_token %}
+
+                {% render_field form.Email id="customEddy" placeholder="Email" %}<br>
+
+                {% render_field form.Fname id="customEddy" placeholder="First Name"  %}<br>
+
+                {% render_field form.Lname id="customEddy" placeholder="Last Name" %}<br>
+
+                {% render_field form.Math id="customEddy" placeholder="Math Grade" %}<br>
+
+                {% render_field form.English id="customEddy" placeholder="English Grade" %}<br>
+
+                {% render_field form.Physics id="customEddy" placeholder="Physics Grade" %}<br>
+
+                {% render_field form.Chemistry id="customEddy" placeholder="Chemistry Grade" %}<br>
+
+                {% render_field form.year_in_school id="customEddy" placeholder="Current Grade" %}<br>
+
+                <div class="flex-parent jc-center">
+                    <button type="submit" >Submit</button>
+                </div>
+            </div>
+        </form>
+
+{% endblock %}
+

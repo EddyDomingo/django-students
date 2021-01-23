@@ -1,0 +1,89 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        #customEddy {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+
+        }
+
+        #formEddy {
+            margin: 0 auto;
+            width:900px;
+            border-style: inset;
+            border-width: medium;
+        }
+        #h1Eddy {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+    </style>
+    <title>Input-Student Information</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">NextGen
+                <img src="{% static 'report_card/images/logo.jpeg' %}" alt="" width="30" height="24">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/#">Home</a>
+                <a class="nav-link" href="#">Input Student</a>
+                <a class="nav-link" href="#">Modify Student</a>
+                <a class="nav-link" href="#">Delete Student</a>
+
+              </div>
+            </div>
+          </div>
+        </nav>
+        <br><br>
+
+        <h1 id="h1Eddy">Input Form for Students & Grades</h1>
+        <form action="" method="post" id="formEddy">
+
+            <div class="mb-3">
+                {% csrf_token %}
+
+                {% render_field form.Fname id="customEddy" placeholder="First Name"  %}<br>
+
+
+                {% render_field form.Lname id="customEddy" placeholder="Last Name" %}<br>
+
+
+                {% render_field form.Email id="customEddy" placeholder="Email" %}<br>
+
+
+                {% render_field form.Math id="customEddy" placeholder="Math Grade" %}<br>
+
+
+                {% render_field form.English id="customEddy" placeholder="English Grade" %}<br>
+
+
+                {% render_field form.Physics id="customEddy" placeholder="Physics Grade" %}<br>
+
+
+                {% render_field form.Chemistry id="customEddy" placeholder="Chemistry Grade" %}<br>
+
+
+                {% render_field form.year_in_school id="customEddy" placeholder="Current Grade" %}<br>
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+        </form>
+
+</body>
+</html>
